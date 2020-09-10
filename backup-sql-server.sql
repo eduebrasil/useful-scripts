@@ -26,7 +26,7 @@ FETCH NEXT FROM db_cursor INTO @name
  
 WHILE @@FETCH_STATUS = 0   
 BEGIN   
-   SET @fileName = @path + @name + '_' + @fileDate + '.BAK'  
+   SET @fileName = @path + @name + '.BAK'  
    BACKUP DATABASE @name TO DISK = @fileName  
  
    FETCH NEXT FROM db_cursor INTO @name   
