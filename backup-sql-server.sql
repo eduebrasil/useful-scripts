@@ -17,7 +17,7 @@ SELECT @fileDate = CONVERT(VARCHAR(20),GETDATE(),112)
 DECLARE db_cursor CURSOR READ_ONLY FOR  
 SELECT name 
 FROM master.sys.databases 
-WHERE name NOT IN ('master','model','msdb','tempdb')  -- exclude these databases
+WHERE name NOT IN ('master','model','msdb','tempdb','ASPState')  -- exclude these databases
 AND state = 0 -- database is online
 AND is_in_standby = 0 -- database is not read only for log shipping
  
